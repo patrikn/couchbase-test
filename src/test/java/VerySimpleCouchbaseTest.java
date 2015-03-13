@@ -11,6 +11,7 @@ import java.util.Arrays;
 import java.util.UUID;
 import net.spy.memcached.CASValue;
 import net.spy.memcached.transcoders.Transcoder;
+import org.junit.Before;
 import org.junit.Test;
 import rx.Notification;
 import rx.Observable;
@@ -24,6 +25,11 @@ public class VerySimpleCouchbaseTest
     public static final String UPDATED_JSON = "{\"data\":\"updated json\"";
     public static final String ORIGINAL_JSON = "{\"data\":\"some json\"}";
     private long start;
+
+    @Before
+    public void printOs() {
+        System.out.println("Platform: " + System.getProperties().get("os.name") + " " + System.getProperties().get("os.version"));
+    }
 
     @Test
     public void test21() {
